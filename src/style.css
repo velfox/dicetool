@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  #gui-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+  
+  #canvas-container {
+    width: 100vw;
+    height: 100vh;
+  }
+  
