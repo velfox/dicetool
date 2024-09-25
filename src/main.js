@@ -61,6 +61,7 @@ function init() {
   const loader = new FontLoader();
   loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function (loadedFont) {
     font = loadedFont;
+    console.log('Font loaded:', font);
     // Dobbelsteen creëren na het laden van het font
     createDice();
   }, undefined, function (error) {
@@ -166,6 +167,12 @@ function addNumbersAndSubtract(diceMesh) {
 
     // Update de matrix van de textMesh
     textMesh.updateMatrixWorld(true);
+
+    // Log details for debugging
+    console.log(`Number: ${number}`);
+    console.log(`Position: ${textMesh.position.toArray()}`);
+    console.log(`Quaternion: ${textMesh.quaternion.toArray()}`);
+    console.log(`Scale: ${textMesh.scale.toArray()}`);
 
     // Maak een CSG object van het cijfer
     const csgText = CSG.fromMesh(textMesh);
