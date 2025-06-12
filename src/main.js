@@ -144,6 +144,10 @@ function addNumbersAndSubtract(diceMesh) {
   for (let i = 0; i < faceNormals.length; i++) {
     const number = i + 1;
     const textGeometry = new TextGeometry(number.toString(), textOptions);
+    textGeometry.computeBoundingBox();
+    const center = new THREE.Vector3();
+    textGeometry.boundingBox.getCenter(center);
+    textGeometry.translate(-center.x, -center.y, -center.z);
 
     // Maak een Mesh van het cijfer
     const textMesh = new THREE.Mesh(textGeometry);
